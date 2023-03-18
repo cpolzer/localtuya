@@ -664,7 +664,7 @@ class TuyaProtocol(asyncio.Protocol, ContextualLogger):
 
     def data_received(self, data):
         """Received data from device."""
-        # self.debug("received data=%r", binascii.hexlify(data))
+        self.debug("received data=%r", binascii.hexlify(data))
         self.dispatcher.add_data(data)
 
     def connection_lost(self, exc):
